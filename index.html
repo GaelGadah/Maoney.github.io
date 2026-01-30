@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maoney — Mobile Profile</title>
+
+  <!-- Material Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,600,0,0"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --card:#121420;
+      --line:rgba(255,255,255,.1);
+      --text:#e7e7ee;
+      --muted:#a7a9b7;
+      --primary:#2f6df6;
+      --danger:#e24d4d;
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto;
+    }
+
+    .mi{
+      font-family:"Material Symbols Rounded";
+      font-size:22px;
+      vertical-align:middle;
+    }
+
+    /* Top bar */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:10;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:14px;
+      background:rgba(11,12,16,.9);
+      border-bottom:1px solid var(--line);
+    }
+
+    .topbar .title{
+      font-weight:800;
+      flex:1;
+    }
+
+    /* Profile header */
+    .profile{
+      padding:18px;
+      text-align:center;
+    }
+
+    .avatar{
+      width:96px;
+      height:96px;
+      border-radius:28px;
+      margin:0 auto 12px;
+      background:linear-gradient(135deg,#2f6df6,#25c76f);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .avatar .mi{font-size:48px}
+
+    .name{font-size:20px;font-weight:800}
+    .handle{color:var(--muted)}
+    .badges{
+      display:flex;
+      justify-content:center;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+
+    .badge{
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      border:1px solid var(--line);
+      font-size:12px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+
+    .status{
+      margin:14px 0;
+      padding:12px;
+      border-radius:14px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+    }
+
+    /* Sticky actions */
+    .actions{
+      position:sticky;
+      top:64px;
+      z-index:9;
+      display:flex;
+      gap:10px;
+      padding:12px;
+      background:rgba(11,12,16,.95);
+    }
+
+    .btn{
+      flex:1;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      color:var(--text);
+      font-weight:700;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+    }
+
+    .btn.primary{
+      background:rgba(47,109,246,.25);
+      border-color:rgba(47,109,246,.5);
+    }
+
+    .btn.danger{
+      background:rgba(226,77,77,.2);
+      border-color:rgba(226,77,77,.5);
+    }
+
+    /* Sections */
+    .section{
+      margin:16px;
+      padding:16px;
+      background:var(--card);
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+    }
+
+    .section h3{
+      margin:0 0 12px;
+      font-size:14px;
+      color:var(--muted);
+      display:flex;
+      align-items:center;
+      gap:8px;
+      text-transform:uppercase;
+      letter-spacing:.4px;
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .tag{
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      font-size:13px;
+    }
+
+    /* Media grid */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:10px;
+    }
+
+    .media{
+      aspect-ratio:1/1;
+      border-radius:14px;
+      border:1px dashed var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--muted);
+    }
+
+    /* Footer spacing */
+    .spacer{height:40px}
+  </style>
+</head>
+
+<body>
+
+  <!-- Top -->
+  <div class="topbar">
+    <span class="mi">arrow_back</span>
+    <div class="title">Profile</div>
+    <span class="mi">more_vert</span>
+  </div>
+
+  <!-- Profile -->
+  <div class="profile">
+    <div class="avatar">
+      <span class="mi">person</span>
+    </div>
+    <div class="name">Alex Ventura</div>
+    <div class="handle">@alexv</div>
+
+    <div class="badges">
+      <div class="badge"><span class="mi">verified</span>Verified</div>
+      <div class="badge"><span class="mi">near_me</span>~2–5 mi</div>
+      <div class="badge"><span class="mi">location_city</span>San Francisco</div>
+    </div>
+
+    <div class="status">
+      Open to meet for coffee, hikes, and spontaneous adventures ☕🥾
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="actions">
+    <button class="btn primary"><span class="mi">person_add</span>Connect</button>
+    <button class="btn"><span class="mi">chat</span>Message</button>
+    <button class="btn danger"><span class="mi">block</span></button>
+  </div>
+
+  <!-- About -->
+  <div class="section">
+    <h3><span class="mi">description</span>About</h3>
+    Product designer into outdoor adventures, analog photography, and building real-world community.
+  </div>
+
+  <!-- Tribes -->
+  <div class="section">
+    <h3><span class="mi">sell</span>Tribes</h3>
+    <div class="tags">
+      <span class="tag">#Hiking</span>
+      <span class="tag">#Design</span>
+      <span class="tag">#Photography</span>
+      <span class="tag">#Coffee</span>
+      <span class="tag">#Startups</span>
+      <span class="tag">#Spanish</span>
+    </div>
+  </div>
+
+  <!-- Posts -->
+  <div class="section">
+    <h3><span class="mi">collections</span>Posts</h3>
+    <div class="grid">
+      <div class="media"><span class="mi">image</span></div>
+      <div class="media"><span class="mi">play_circle</span></div>
+      <div class="media"><span class="mi">image</span></div>
+      <div class="media"><span class="mi">image</span></div>
+    </div>
+  </div>
+
+  <!-- Communities -->
+  <div class="section">
+    <h3><span class="mi">groups</span>Communities</h3>
+    <div class="tags">
+      <span class="tag">Trail Runners SF</span>
+      <span class="tag">AI Builders</span>
+      <span class="tag">Photo Walks</span>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+</body>
+</html>
